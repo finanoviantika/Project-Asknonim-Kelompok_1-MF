@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "454992502354",
+    "project_id": "asknonim",
+    "storage_bucket": "asknonim.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454992502354:android:41d6c17a5e642d17e1898b",
+        "android_client_info": {
+          "package_name": "com.example.asknonim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454992502354-3khqjo42tabg0auhnp6a2euuk22ktap6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNRfBpCZPyA6cHC8xQ6f3C6BNrPAGxaqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454992502354-3khqjo42tabg0auhnp6a2euuk22ktap6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
