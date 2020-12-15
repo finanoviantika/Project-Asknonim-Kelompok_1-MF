@@ -29,12 +29,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-/**
- * kelas loginActivity digunakan untuk melakukan login akun dengan memasukkan email dan password
- * yang telah terdaftar sebelumnya. jika tidak memiliki akun, maka dapat mengklik register
- * dibawah button login. disini juga diberikan fitur untuk melihat dan menyembunyikan password
- * @author khairul anwar, nashrullah, fahmi ardiansyah, fina noviantika, nona zarima, mauliza yunita
- */
 public class LoginActivity extends AppCompatActivity {
 
     //views
@@ -63,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         //In the onCreate() method, initialize the FirebaseAuth instance.
         mAuth = FirebaseAuth.getInstance();
 
-        //inisialisasi
+        //init
         mEmailEt= findViewById(R.id.emailEt);
         mPasswordEt= findViewById(R.id.passwordEt);
         notHaveAccntTv= findViewById(R.id.nothave_accountTv);
@@ -196,24 +190,29 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            //get user email and uid from auth
-                            String email = user.getEmail();
-                            String uid = user.getUid();
-                            //When user is registered store user info in firebase realtime database too
-                            //using hashmap
-                            HashMap<Object, String> hashMap = new HashMap<>();
-                            //put info in hashmap
-                            hashMap.put("email",email);
-                            hashMap.put("uid",uid);
-                            hashMap.put("name","");//will add later
-                            hashMap.put("phone","");//will add later
-                            hashMap.put("image","");//will add later
-                            //firebase database instance
-                            FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            //path to store user data named "user/Anonim"
-                            DatabaseReference reference = database.getReference("User");
-                            //put data within hashmap in database
-                            reference.child(uid).setValue(hashMap);
+                            //if user login first time
+                            if(task.getResult().getAdditionalUserInfo().isNewUser()){
+
+                                //get user email and uid from auth
+                                String email = user.getEmail();
+                                String uid = user.getUid();
+                                //When user is registered store user info in firebase realtime database too
+                                //using hashmap
+                                HashMap<Object, String> hashMap = new HashMap<>();
+                                //put info in hashmap
+                                hashMap.put("email",email);
+                                hashMap.put("uid",uid);
+                                hashMap.put("name","");
+                                hashMap.put("phone","");
+                                hashMap.put("image","");
+                                hashMap.put("cover","");
+                                //firebase database instance
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                //path to store user data named "user/Anonim"
+                                DatabaseReference reference = database.getReference("User");
+                                //put data within hashmap in database
+                                reference.child(uid).setValue(hashMap);
+                            }
 
                             //user is logged in,so start LoginActivity
                             startActivity(new Intent(LoginActivity.this, DashboardActivity.class));

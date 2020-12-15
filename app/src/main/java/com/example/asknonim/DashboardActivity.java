@@ -15,12 +15,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-/**
- * kelas DashboardActivity digunakan untuk membuat dashboard tampilan
- * yang berisi Home, Profil, dan AddGroup
- *
- * @author khairul anwar, nashrullah, fahmi ardiansyah, fina noviantika, nona zarima, mauliza yunita
- */
 public class DashboardActivity extends AppCompatActivity {
 
     //firebase auth
@@ -37,7 +31,7 @@ public class DashboardActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setTitle("Home");
 
-        //inisialisasi
+        //init
         firebaseAuth = FirebaseAuth.getInstance();
 
         //bottom navigation

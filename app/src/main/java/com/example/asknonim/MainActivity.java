@@ -8,11 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-/**
- * kelas MainActivity digunakan untuk mengaktifkan button register dan login
- * agar dapat diklik
- * @author khairul anwar, nashrullah, fahmi ardiansyah, fina noviantika, nona zarima, mauliza yunita
- */
 public class MainActivity extends AppCompatActivity {
 
     //Tampilan(views)

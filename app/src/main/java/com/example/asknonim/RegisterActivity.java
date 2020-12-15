@@ -25,15 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 
-/**
- * kelas RegisterActivity digunakan untuk melakukan register akun baru dengan memasukkan email dan
- * password, jika telah memiliki akun, maka dapat beralih dengan mengklik login dibawah button register
- * disini juga diberikan fitur untuk melihat dan menyembunyikan password
- * @author khairul anwar, nashrullah, fahmi ardiansyah, fina noviantika, nona zarima, mauliza yunita
- */
 public class RegisterActivity extends AppCompatActivity {
 
-    //inisialisasi variabel sesuai kegunaan
+    //views
     EditText mEmailEt, mPasswordEt;
     Button mRegisterBtn;
     TextView mHaveAccountTv;
@@ -56,7 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayShowHomeEnabled(true);
 
-        //inisialisasi variabel dengan engambil resources yang telah dibuat di values
+        //init
         mEmailEt = findViewById(R.id.emailEt);
         mPasswordEt = findViewById(R.id.passwordEt);
         mRegisterBtn = findViewById(R.id.registerBtn);
@@ -64,7 +58,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         //In the onCreate() method, initialize the FirebaseAuth instance.
         mAuth = FirebaseAuth.getInstance();
-        // membuat objek
+
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Registering User");
 
@@ -125,6 +119,10 @@ public class RegisterActivity extends AppCompatActivity {
                             //put info in hashmap
                             hashMap.put("email",email);
                             hashMap.put("uid",uid);
+                            hashMap.put("phone","");
+                            hashMap.put("name","");
+                            hashMap.put("image","");
+                            hashMap.put("cover","");
 
                             //firebase database instance
                             FirebaseDatabase database = FirebaseDatabase.getInstance();

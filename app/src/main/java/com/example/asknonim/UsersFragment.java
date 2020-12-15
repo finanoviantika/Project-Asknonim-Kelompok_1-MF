@@ -9,12 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * kelas UsersFragment digunakan untuk membuat tampilan addgroup
  * A simple {@link Fragment} subclass.
  * Use the {@link UsersFragment#newInstance} factory method to
  * create an instance of this fragment.
- *
- * @author khairul anwar, nashrullah, fahmi ardiansyah, fina noviantika, nona zarima, mauliza yunita
  */
 public class UsersFragment extends Fragment {
 
@@ -32,12 +29,12 @@ public class UsersFragment extends Fragment {
     }
 
     /**
-     * method UsersFragment digunakan untuk membuat instance baru dari fragment ini
-     * menggunakan parameter yang ada
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return mengembalikan fragment UsersFragment.
+     * @return A new instance of fragment UsersFragment.
      */
     // TODO: Rename and change types and number of parameters
     public static UsersFragment newInstance(String param1, String param2) {
